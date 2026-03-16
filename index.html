@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OpenBrain Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Roboto+Mono:wght@400;500&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="OpenBrain Studio 首页">
+      <span class="brand-mark">OB</span>
+      <span class="brand-name">OpenBrain Studio</span>
+    </a>
+    <nav class="site-nav">
+      <a href="#project">项目</a>
+      <a href="#buy">购买</a>
+      <a href="#contact">联系</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="showcase" id="top" data-showcase>
+      <div class="showcase-pin">
+        <div class="showcase-copy">
+          <p class="eyebrow">Current Feature</p>
+          <h1>上海理工大学沉金 PCB 校园卡</h1>
+          <div class="stage-status" aria-label="动效阶段">
+            <button class="status-chip is-active" type="button" data-phase-chip="blueprint">图纸</button>
+            <button class="status-chip" type="button" data-phase-chip="material">实物</button>
+            <button class="status-chip" type="button" data-phase-chip="reverse">背面</button>
+          </div>
+          <div class="hero-actions">
+            <a class="btn primary" href="#buy">查看购买方式</a>
+            <a class="btn ghost" href="#project">查看项目结构</a>
+          </div>
+        </div>
+
+        <div class="showcase-visual">
+          <div class="visual-field"></div>
+          <div
+            class="stage-object"
+            data-stage-object
+            style="--blueprint-alpha: 1; --card-alpha: 0; --turn: 0deg;"
+          >
+            <div class="object-glow"></div>
+            <img src="stage_blueprint.png" alt="PCB 设计图纸" class="object-layer blueprint-layer" loading="eager" />
+            <div class="card-rig">
+              <div class="card-shell">
+                <div class="card-face front-face" aria-hidden="true">
+                  <img src="stage_front.png" alt="PCB 校园卡正面" loading="eager" />
+                </div>
+                <div class="card-face back-face" aria-hidden="true">
+                  <img src="stage_back.png" alt="PCB 校园卡背面" loading="eager" />
+                </div>
+              </div>
+            </div>
+            <div class="object-shadow"></div>
+          </div>
+        </div>
+
+        <div class="showcase-hud">
+          <div class="hud-track" aria-hidden="true">
+            <span class="hud-fill" data-progress-fill></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section" id="project">
+      <div class="section-heading">
+        <p class="eyebrow">Projects</p>
+        <h2>工作室项目结构</h2>
+        <p>当前先展示校园卡，下面的卡位已经为后续项目预留。</p>
+      </div>
+      <div class="project-grid">
+        <article class="project-card current">
+          <div class="project-cover">
+            <img src="stage_front.png" alt="上海理工大学沉金 PCB 校园卡" loading="lazy" />
+          </div>
+          <div class="project-body">
+            <h3>上海理工大学沉金 PCB 校园卡</h3>
+            <p>把校园卡芯片转移到定制 PCB 外观上，保留刷卡体验，同时把电路图形本身作为成品正面的一部分。</p>
+            <div class="tag-row">
+              <span>PCB</span>
+              <span>Campus Card</span>
+              <span>Gold Finish</span>
+            </div>
+          </div>
+        </article>
+        <article class="project-card future">
+          <div class="project-body">
+            <h3>Next Project</h3>
+            <p>这里保留下一个项目位。后续可以继续加新作品，不需要再改首页结构。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="buy-section" id="buy">
+      <div class="section-heading">
+        <p class="eyebrow">Purchase</p>
+        <h2>购买方式与价格</h2>
+        <p>支持直接联系，也保留抖音和闲鱼入口，但链接本体不直接展示。</p>
+      </div>
+      <div class="buy-grid">
+        <article class="buy-card price-card">
+          <p class="price-title">金色版</p>
+          <p class="price-value">30R</p>
+          <p class="price-note">不包邮</p>
+        </article>
+        <article class="buy-card price-card">
+          <p class="price-title">银色版</p>
+          <p class="price-value">5R</p>
+          <p class="price-note">不包邮</p>
+        </article>
+        <article class="buy-card action-card">
+          <p class="card-title">联系购买</p>
+          <div class="action-list">
+            <button class="copy-button" data-copy="Scorpio_Nov_Cao">复制微信号</button>
+            <button class="copy-button" data-copy="15048094700">复制手机号</button>
+            <button class="copy-button" data-copy="8.71 08/25 Rkc:/ z@G.iP 【抖音商城】https://v.douyin.com/M58rXrAzHJw/ 上海理工大学沉金PCB校园卡 金色30 银色5 不包邮 长按复制此条消息，打开抖音搜索，查看商品详情！">复制抖音口令</button>
+            <button class="copy-button" data-copy="【闲鱼】https://m.tb.cn/h.i4bUpl3?tk=1eNZUxZkIv9 CZ005">复制闲鱼链接</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="notes-section">
+      <div class="section-heading">
+        <p class="eyebrow">Notes</p>
+        <h2>刷卡方案说明</h2>
+      </div>
+      <div class="notes-grid">
+        <article class="note-card">
+          <h3>完全替代校园卡</h3>
+          <p>需要拆掉校园卡取出芯片，并把芯片焊接到 PCB 上。</p>
+        </article>
+        <article class="note-card">
+          <h3>半替代校园卡</h3>
+          <p>可以保留原校园卡，但 PCB 只能复制门禁功能，不能刷饭卡等消费场景。</p>
+        </article>
+        <article class="note-card">
+          <h3>额外说明</h3>
+          <p>移植芯片以后再补卡，目前没有实际测试记录。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="section-heading">
+        <p class="eyebrow">Contact</p>
+        <h2>联系方式</h2>
+        <p>购买、合作、后续项目更新都可以从这里进入。</p>
+      </div>
+      <div class="contact-grid">
+        <article class="contact-card">
+          <h3>直接联系</h3>
+          <p>微信：Scorpio_Nov_Cao</p>
+          <p>电话：15048094700</p>
+          <p>邮箱：15048094700@163.com</p>
+        </article>
+        <article class="contact-card">
+          <h3>工作室状态</h3>
+          <p>当前首页已按多项目结构搭好，后续只需要继续增加项目卡片与详情入口。</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 OpenBrain Studio</p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="main.js"></script>
+</body>
+</html>
