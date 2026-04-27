@@ -7,20 +7,7 @@ const smoothstep = (edge0, edge1, value) => {
 const showcase = document.querySelector("[data-showcase]");
 const stageObject = document.querySelector("[data-stage-object]");
 const progressFill = document.querySelector("[data-progress-fill]");
-const phaseChips = Array.from(document.querySelectorAll("[data-phase-chip]"));
 const toast = document.getElementById("toast");
-
-const PHASE_TEXT = {
-  blueprint: "阶段 1 / 图纸切换为实物",
-  material: "阶段 2 / 正面稳定展示",
-  reverse: "阶段 3 / 翻到背面",
-};
-
-const PHASE_SCROLL = {
-  blueprint: 0.1,
-  material: 0.42,
-  reverse: 0.86,
-};
 
 let rafId = 0;
 
@@ -33,18 +20,13 @@ const getStageBounds = () => {
   return { start, end, distance };
 };
 
-const setPhase = (phase) => {
-  phaseChips.forEach((chip) => {
-    chip.classList.toggle("is-active", chip.dataset.phaseChip === phase);
-  });
-};
-
 const applyStage = (progress) => {
   if (!stageObject) return;
 
   const morph = smoothstep(0.06, 0.34, progress);
-  const hold = smoothstep(0.34, 0.52, progress);
   const flip = smoothstep(0.56, 0.9, progress);
+  const copyReveal = smoothstep(0.26, 0.48, progress);
+  const mobileCardScale = 1.14 - copyReveal * 0.1;
 
   const blueprintAlpha = 1 - morph;
   const cardAlpha = morph;
@@ -57,17 +39,14 @@ const applyStage = (progress) => {
   stageObject.style.setProperty("--turn", turn);
   stageObject.style.setProperty("--front-face-opacity", `${frontOpacity}`);
   stageObject.style.setProperty("--back-face-opacity", `${backOpacity}`);
+  stageObject.style.setProperty("--mobile-card-scale", mobileCardScale.toFixed(3));
 
   if (progressFill) {
     progressFill.style.width = `${(progress * 100).toFixed(1)}%`;
   }
 
-  if (progress < 0.34) {
-    setPhase("blueprint");
-  } else if (progress < 0.56 || hold < 1) {
-    setPhase("material");
-  } else {
-    setPhase("reverse");
+  if (showcase) {
+    showcase.style.setProperty("--copy-reveal", copyReveal.toFixed(3));
   }
 };
 
@@ -89,17 +68,6 @@ const requestRender = () => {
 window.addEventListener("scroll", requestRender, { passive: true });
 window.addEventListener("resize", requestRender);
 window.addEventListener("load", requestRender);
-
-phaseChips.forEach((chip) => {
-  chip.addEventListener("click", () => {
-    if (!showcase) return;
-    const phase = chip.dataset.phaseChip;
-    if (!phase || !(phase in PHASE_SCROLL)) return;
-    const { start, distance } = getStageBounds();
-    const targetY = start + distance * PHASE_SCROLL[phase];
-    window.scrollTo({ top: targetY, behavior: "smooth" });
-  });
-});
 
 const showToast = (message) => {
   if (!toast) return;

@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700&family=Roboto+Mono:wght@400;500&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=20260318b" />
 </head>
 <body>
   <header class="site-header">
@@ -27,12 +27,10 @@
       <div class="showcase-pin">
         <div class="showcase-copy">
           <p class="eyebrow">Current Feature</p>
-          <h1>上海理工大学沉金 PCB 校园卡</h1>
-          <div class="stage-status" aria-label="动效阶段">
-            <button class="status-chip is-active" type="button" data-phase-chip="blueprint">图纸</button>
-            <button class="status-chip" type="button" data-phase-chip="material">实物</button>
-            <button class="status-chip" type="button" data-phase-chip="reverse">背面</button>
-          </div>
+          <h1>
+            <span class="title-line title-line-wide">上海理工大学</span>
+            <span class="title-line title-line-accent">沉金 PCB 校园卡</span>
+          </h1>
           <div class="hero-actions">
             <a class="btn primary" href="#buy">查看购买方式</a>
             <a class="btn ghost" href="#project">查看项目结构</a>
@@ -47,14 +45,14 @@
             style="--blueprint-alpha: 1; --card-alpha: 0; --turn: 0deg;"
           >
             <div class="object-glow"></div>
-            <img src="stage_blueprint.png" alt="PCB 设计图纸" class="object-layer blueprint-layer" loading="eager" />
+            <img src="stage_blueprint_trim.png" alt="PCB 设计图纸" class="object-layer blueprint-layer" loading="eager" />
             <div class="card-rig">
               <div class="card-shell">
                 <div class="card-face front-face" aria-hidden="true">
-                  <img src="stage_front.png" alt="PCB 校园卡正面" loading="eager" />
+                  <img src="stage_front_trim.png" alt="PCB 校园卡正面" loading="eager" />
                 </div>
                 <div class="card-face back-face" aria-hidden="true">
-                  <img src="stage_back.png" alt="PCB 校园卡背面" loading="eager" />
+                  <img src="stage_back_trim.png" alt="PCB 校园卡背面" loading="eager" />
                 </div>
               </div>
             </div>
@@ -79,7 +77,7 @@
       <div class="project-grid">
         <article class="project-card current">
           <div class="project-cover">
-            <img src="stage_front.png" alt="上海理工大学沉金 PCB 校园卡" loading="lazy" />
+            <img src="stage_front_trim.png" alt="上海理工大学沉金 PCB 校园卡" loading="lazy" />
           </div>
           <div class="project-body">
             <h3>上海理工大学沉金 PCB 校园卡</h3>
@@ -109,12 +107,12 @@
       <div class="buy-grid">
         <article class="buy-card price-card">
           <p class="price-title">金色版</p>
-          <p class="price-value">30R</p>
+          <p class="price-value">¥30</p>
           <p class="price-note">不包邮</p>
         </article>
         <article class="buy-card price-card">
           <p class="price-title">银色版</p>
-          <p class="price-value">5R</p>
+          <p class="price-value">¥5</p>
           <p class="price-note">不包邮</p>
         </article>
         <article class="buy-card action-card">
@@ -122,7 +120,7 @@
           <div class="action-list">
             <button class="copy-button" data-copy="Scorpio_Nov_Cao">复制微信号</button>
             <button class="copy-button" data-copy="15048094700">复制手机号</button>
-            <button class="copy-button" data-copy="8.71 08/25 Rkc:/ z@G.iP 【抖音商城】https://v.douyin.com/M58rXrAzHJw/ 上海理工大学沉金PCB校园卡 金色30 银色5 不包邮 长按复制此条消息，打开抖音搜索，查看商品详情！">复制抖音口令</button>
+            <button class="copy-button" data-copy="8.71 08/25 Rkc:/ z@G.iP 【抖音商城】https://v.douyin.com/M58rXrAzHJw/ 上海理工大学金色PCB校园卡 金色30 银色5 不包邮 长按复制此条消息，打开抖音搜索，查看商品详情！">复制抖音口令</button>
             <button class="copy-button" data-copy="【闲鱼】https://m.tb.cn/h.i4bUpl3?tk=1eNZUxZkIv9 CZ005">复制闲鱼链接</button>
           </div>
         </article>
@@ -136,16 +134,12 @@
       </div>
       <div class="notes-grid">
         <article class="note-card">
-          <h3>完全替代校园卡</h3>
+          <h3>1. 完全替代校园卡</h3>
           <p>需要拆掉校园卡取出芯片，并把芯片焊接到 PCB 上。</p>
         </article>
         <article class="note-card">
-          <h3>半替代校园卡</h3>
+          <h3>2. 半替代校园卡</h3>
           <p>可以保留原校园卡，但 PCB 只能复制门禁功能，不能刷饭卡等消费场景。</p>
-        </article>
-        <article class="note-card">
-          <h3>额外说明</h3>
-          <p>移植芯片以后再补卡，目前没有实际测试记录。</p>
         </article>
       </div>
     </section>
@@ -176,6 +170,6 @@
   </footer>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="main.js"></script>
+  <script src="main.js?v=20260318b"></script>
 </body>
 </html>
